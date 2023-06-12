@@ -22,12 +22,12 @@ public class DatabaseSeeder implements CommandLineRunner {
 
     private void seedData() {
         // Create and save sample students
-        Student student1 = new Student("John Doe");
-        Student student2 = new Student("Jane Smith");
+        Student student1 = new Student("Jaca");
+        Student student2 = new Student("Krzychu");
         studentRepository.saveAll(Arrays.asList(student1, student2));
 
-        Student studentCanada = new InternationalStudent("John Doe","Canada");
-        Student studentRussia = new InternationalStudent("Jane Smith","Russia");
+        Student studentCanada = new InternationalStudent("Jan Paweł","Canada");
+        Student studentRussia = new InternationalStudent("Jan Kowalski","Russia");
         studentRepository.saveAll(Arrays.asList(studentCanada, studentRussia));
 
         // Create and save sample courses
@@ -40,8 +40,11 @@ public class DatabaseSeeder implements CommandLineRunner {
         student1.getCourses().addAll(Arrays.asList(course1, course2));
         student2.getCourses().add(course3);
         studentCanada.getCourses().add(course1);
+        studentCanada.getCourses().add(course1);
+        studentCanada.getCourses().add(course1);
         studentRussia.getCourses().add(course2);
 
         studentRepository.saveAll(Arrays.asList(student1, student2));
+
     }
 }
